@@ -30,6 +30,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 			<input
 				type="text"
 				placeholder="Search for a word..."
+				name="searchInput"
 				value={searchTerm}
 				onChange={e => setSearchTerm(e.target.value)}
 				className="w-full bg-transparent border-none text-white focus:ring-0 focus:outline-none mx-4"

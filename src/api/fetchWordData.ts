@@ -24,6 +24,9 @@ export default async function fetchWordData(word: string): Promise<DictionaryDat
 	//Get the Data from the Response
 	const data = await response.json();
 
+	//Check if the Data is not Valud
+	if (!data || data.length === 0) return new Error("Requested Word could not be Found");
+
 	//Get the Dictionary Data from the Data
 	const dictionaryData = transformWordData(data[0]);
 
@@ -43,6 +46,7 @@ function transformWordData(rawData: any): DictionaryData {
 		usage: [],
 		soundID: rawData.hwi.prs[0].sound.audio,
 	};
+
 	//Setup the Base Audio URL
 	const baseAudioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3`;
 

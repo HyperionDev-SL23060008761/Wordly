@@ -66,7 +66,7 @@ export default function Home() {
 
 				{isLoading && (
 					<div className="p-6 border bg-[#161616] border-gray-200 rounded-lg shadow-lg w-[75vw] h-[50vh] flex justify-center items-center">
-						<PropagateLoader color="#2563eb" />
+						<PropagateLoader color="#2563eb" id="loader" />
 					</div>
 				)}
 				{error && <p>Error fetching data: {error.message}</p>}
