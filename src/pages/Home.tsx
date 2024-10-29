@@ -34,7 +34,6 @@ export default function Home() {
 
 		//Check if the Word Data is not a type of Error and save the Data in the State
 		if (!(data instanceof Error)) setWordData(data);
-		console.log(data);
 
 		//Mark the Loading as Complete
 		return setIsLoading(false);
